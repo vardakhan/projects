@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<style>
+    body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: grey;
+}
+
+.calender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid wheat;
+    border-radius: 4px;
+    box-shadow: 4px 5px 7px;
+}
+#left,#right{
+    height: 35vh;
+    width: 13vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#left{
+    background-color: palevioletred;
+}
+#right{
+    background-color: goldenrod;
+}
+#date{
+    font-size: 90px;
+    font-weight: bold;
+}
+#day, #year{
+    font-size: 45px;
+    font-weight: bold;
+}
+#month{
+    font-size: 35px;
+    color: bisque;
+    margin-bottom: 10px;
+}
+</style>
+<body>
+    <div class="calender">
+        <div id="left">
+            <div id="date"></div>
+            <div id="day"></div>
+        </div>
+        <div id="right"> 
+            <div id="month"></div>
+            <div id="year"></div>
+        </div>
+    </div>
+    <script>
+        const date = new Date ()
+        const  weekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        const  Months = ["Jan","Feb","March","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"]
+        document.getElementById('date').innerHTML = date.getDate()
+        document.getElementById('day').innerHTML = weekDay [date.getDay()]
+        document.getElementById('month').innerHTML = Months[date.getMonth()]
+        document.getElementById('year').innerHTML = date.getFullYear()
+
+    </script> 
+</body>
+</html>
