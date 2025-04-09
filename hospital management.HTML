@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare management system</title>
+</head>
+<style>
+    /* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color:black;
+    padding: 20px;
+   
+}
+
+
+header nav ul {
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    color: red;
+
+  
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+padding: 0 200px;
+}
+header nav ul li a {
+    color: red;
+}
+
+
+
+
+
+#home {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerXSLyIQQLdskn41dy8ysxGgq7DmEXTt9Aw&s');
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+    cursor: pointer;
+    
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+  
+ 
+}
+h1{
+    color: black;
+    cursor: pointer;
+ 
+  
+}
+p{
+    color: black;
+}
+
+section {
+    padding: 60px 20px;
+    cursor: pointer;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+   
+}
+
+.service-box {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.service-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+footer {
+    background-color:black;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+p{
+    color:green;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+</style>
+<body>
+   <header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+   </header> 
+   
+   <!--Hero section-->
+   <section id="home">
+<div class="hero_content">
+<marquee><u><h1>Welcome to our Healthcare system</h1></u></marquee>
+<p>Hospital Management System (HMS) is one of the most common software development projects. your health , your priority.</p>
+</div>
+   </section>
+<!--About section-->
+
+   <section id="about">
+    <div class="container">
+ <u>   <h2>About us:</h2></u>
+   <p>Hospitals play a vital role in our lives by offering the greatest medical care to those with a variety of illnesses, whether brought on by stress, emotional trauma, a change in the weather, or other causes. Hospital staff members who are essential to the proper operation of the facility must maintain detailed records of their daily activities and interactions with patients, physicians, nurses, ward boys, and other staff members.</p>
+    </div>
+       </section>
+
+       <!--Service section-->
+       <section id="services">
+        <div class="container">
+           <u> <h2>Our Services:</h2></u>
+            <div class="service-box">
+                <div class="service-item">
+                    <h3>General Checkup</h3>
+                    <p>Regular health checkups to monitor overall health.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Emergency Care</h3>
+                    <p>Emergency medical services available 24/7.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Specialist Consultation</h3>
+                    <p>Consult with medical specialists for specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Contact section-->
+<section id="contact">
+    <div class="container">
+<u><h2>Contact:</h2></u>
+<form action="#" method="post">
+    <input type="text" name="name" placeholder="your Name"required>
+    <input type="email" name=" email" placeholder="your Email"required>
+    <textarea name="messagae" placeholder="your message" required></textarea>
+<button type="submit">Send Message</button>
+
+</form>
+    </div>
+
+</section>
+<footer>
+    <p>&copy;2025 Healthcare Management System</p>
+</footer>
+<script>
+    // scripts.js
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent the form from submitting
+
+    // Form validation
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const message = document.querySelector('textarea[name="message"]').value;
+
+    if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+    } else {
+        alert('Thank you for your message! We will get back to you shortly.');
+    }
+});
+
+</script>
+</body>
+</html>
