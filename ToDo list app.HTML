@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: linear-gradient(333deg,#ff007a 5%, #7036e0 50%, #214b68 95%);
+    }
+    .clock{
+        color: antiquewhite;
+        font-weight: bold;
+        font-size: 2.4em;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: grey;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+</style>
+<body>
+   <div class="clock">
+    <span id="hrs"></span>
+    <span>:</span>
+    <span id="min"></span>
+    <span>:</span>
+    <span id="sec"></span>
+   </div> 
+</body>
+<script>
+
+    function updateClock(){
+    let hrs = document.getElementById('hrs')
+    let min = document.getElementById('min') 
+let sec = document.getElementById('sec')
+
+const time = new Date()
+
+hrs.innerHTML = time.getHours() < 10 ? "0" + time.getHours() : time.getHours()
+min.innerHTML = time.getMinutes()< 10 ? "0" + time.getMinutes() : time.getMinutes()
+sec.innerHTML = time.getSecond()< 10 ? "0" + time.getSeconds() : time.getSeconds()
+    }
+setInterval(()=>
+{
+updateClock()
+},1000);
+
+
+</script>
+</html>
