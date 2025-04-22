@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test forms</title>
+</head>
+<body>
+   <script>
+   // while loop and nested loop
+   // whlie loop is used in js repeated excute a block of code specific condition evaluates to true.
+   let count = 0;
+   while(count < 10){
+      console.log(count);
+      count++
+   };
+   // Nested loop 
+   // A nested loop in js refers to placing one loop inside another.Aloop for more complex operaton,multiple arrays or grid.
+   for(let i = 1; i<7;i++){
+      for(let j = 1; j<=5;j++){
+         // code to be excuted
+      }
+   };
+   // Method of array and string
+   // JS arrays comes with a variety built in method that allows you to manipulate,search and iterate through method.
+   // Add one and more elelment of an array
+   let arr = [1,2,3,];
+   arr.push(4,5,6);
+    console.log(arr);
+   //  Remove last element of an array
+   let arr1 = [1,2,3,];
+   let poppedElement = arr.pop();
+   console.log(arr1);
+   console.log(poppedElement);
+   // Remove the first element and return that element
+   let arr2 = [1,2,3,];
+   let shiftedElement = arr.shift();
+   console.log(arr2);
+   console.log(shiftedElement);
+   // Add one and more elements begining of an array
+   let arr3 = [1,2,3,];
+   arr3.unshift(0);
+   console.log(arr3);
+   // Merge 2 or more arrays,return new array 
+   let arr4 = [4,5,6];
+   let arr5 = [7,8,9,];
+   let mergedArray = arr4.concat(arr5);
+   console.log(mergedArray);
+   // Return a shallow copy of a portion
+   let arr6 = [1,9,4,5,6,7];
+   let slicedArray = arr6.slice(1,4);
+   console.log(slicedArray);
+   // Change the content of an array and replace elements and /or new element in place.
+   let arr7 = [1,2,3,4,5];
+   arr7.splice(3,3,5,6,);
+   console.log(arr7);
+   // .forEach()
+   // Excute a provided function one for each element
+   let a = [23,45,67,]
+a.forEach(function(element){
+   console.log(a)
+});
+let arr8 = [1,2,3,4]
+arr8.forEach(num=>console.log(num));
+let arr9 = [1,2,3,4,5]
+
+let doubled = arr9.map(num => num*2);
+let events = arr.filter(num => num%2);
+
+
+
+// String method
+// String operation in js
+// cooncatination: combine string using + operator
+
+let greeting = "Hello," + "world"
+console.log(greeting);
+
+// Length: Get the using of length
+let name = "Javascript"
+console.log(name.length);
+
+// Assending chararcter
+// individual character
+let word = "Hello world"
+console.log(word[0]);
+console.log(word.charAt(1));
+
+// string toUpper and lower case
+let text = "hello world"
+console.log(text.toUpperCase());
+console.log(text.toLocaleLowerCase());
+
+
+
+let name1 = "John";
+let greeting2= `Hello, ${name1}!`;
+console.log(greeting2); // Output: Hello, John!
+
+// async and await in js
+// Asyncronous progrrame 
+async function example(){
+   console.log("hello 1 ");
+   await  console.log("hello 2 ");
+   console.log("hello 3 ");
+}
+example();
+console.log("hello 4 ");
+console.log("hello 5 ");
+
+// JS hoisting
+// JS function declation on the top js only declration not intilization
+greet()
+function greet(){
+   console.log("Good morning")
+}
+
+// Difference between var,let,const
+// var 
+// let mean re-declared and & update block scope
+// const mean cannot re-declared & update const mean fix lock.
+// var x = 10;
+// if(true){
+//    var x = 20; 
+//  }
+// console.log(x);
+// let mean block scope
+// you cannot re-declare a variable usinng let within the same scope.
+// let y = 10;
+// if(true){
+//    let y = 20; 
+//  }
+// console.log(y);
+
+// const funtion
+const person = {name:'BOB', age:25};
+person.age = 26;
+console.log(person);
+ 
+// JS operator
+// Arthmetic operators
+// let c = 6;
+// let d = 8;
+// console.log(c+d);
+// console.log(c-d);
+// console.log(c*d);
+// console.log(c/d);
+// console.log(c**d);
+
+// Unary operator
+// console.log("c =", c,"& d =",d);
+// c++;
+// console.log("c =", c);
+// Assigment operator
+// c += 7;
+// console.log("c =", c);
+// Comparison operator
+let x = 5;
+let y = 2;
+console.log("x == y ", x==y);
+console.log("x != y ", x!=y);
+console.log("x === y ", x===y);
+console.log("x !== y ", x!==y);
+// Tenary operator
+
+// what is closers?
+// closure mean is the combination of a function bundled together and lexical enviroment.
+function outer(){
+   const outerVar = 'I am from outer'
+   function inner(){
+      console.log(outerVar);
+   }
+   return inner;
+}
+const newClosure = outer();
+newClosure();
+// Qno.1 write a programe custom sorting accept input as string,array,integer,object array in js.
+// Qno.2 write a progrmae that reads a text file and print the reserved string.
+// QNO.3 write a programe that takes a JSON file as input and convert into CVS file.
+// Qno.4 write a request and response middleware in js.
+// Qno.5 make application in which we can import data using CVS file.
+
+import React, { useState } from "react";
+import { Button, Input } from "@/components/ui/button";
+
+const CustomSorting = () => {
+  const [input, setInput] = useState("");
+  const [sortedData, setSortedData] = useState(null);
+
+  const parseInput = (input) => {
+    try {
+      return JSON.parse(input);
+    } catch {
+      return input;
+    }
+  };
+
+  const sortData = (data) => {
+    if (Array.isArray(data)) {
+      if (data.every((item) => typeof item === "number")) {
+        return data.sort((a, b) => a - b);
+      } else if (data.every((item) => typeof item === "string")) {
+        return data.sort();
+      } else if (data.every((item) => typeof item === "object" && item !== null)) {
+        return data.sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+      }
+    } else if (typeof data === "string") {
+      return data.split("").sort().join("");
+    } else if (typeof data === "number") {
+      return data.toString().split("").sort().join("");
+    }
+    return "Invalid input format";
+  };
+
+  const handleSort = () => {
+    const parsedData = parseInput(input);
+    setSortedData(sortData(parsedData));
+  };
+
+  return (
+    <div className="p-4 max-w-md mx-auto space-y-4">
+      <Input 
+        type="text" 
+        placeholder="Enter array, string, number, or object array" 
+        value={input} 
+        onChange={(e) => setInput(e.target.value)} 
+      />
+      <Button onClick={handleSort}>Sort</Button>
+      {sortedData !== null && (
+        <div className="p-2 border rounded bg-gray-100">
+          <strong>Sorted Output:</strong> {JSON.stringify(sortedData, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CustomSorting;
+
+
+Qno.2
+import React, { useState } from "react";
+
+const FileReverser = () => {
+  const [fileContent, setFileContent] = useState("");
+  const [reversedContent, setReversedContent] = useState("");
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target.result;
+      setFileContent(text);
+      setReversedContent(text.split('').reverse().join(''));
+    };
+    reader.readAsText(file);
+  };
+
+  return (
+    <div className="p-4 max-w-md mx-auto space-y-4">
+      <input type="file" accept=".txt" onChange={handleFileUpload} className="border p-2" />
+      {fileContent && (
+        <div className="p-2 border rounded bg-gray-100">
+          <strong>Original Content:</strong>
+          <pre>{fileContent}</pre>
+        </div>
+      )}
+      {reversedContent && (
+        <div className="p-2 border rounded bg-gray-200">
+          <strong>Reversed Content:</strong>
+          <pre>{reversedContent}</pre>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default FileReverser;
+
+   </script>
+   
+</body>
+</html>
