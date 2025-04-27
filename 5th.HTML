@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated cards hover</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    body{
+display: flex;
+justify-content: center;
+background: white;
+height: 100vh;
+align-items: end;
+    }
+    .container{
+        display: flex;
+    }
+    .card{
+        height: 500px;
+        margin: 50px;
+        box-shadow: 5px 5px 20px black;
+        overflow: hidden;
+    }
+    img{
+    height: 500px;
+    width: 350px;
+    border-bottom: 3px;
+    }
+    .intro{
+        height: 70px;
+        width: 350px;
+        padding: 6px;
+        box-sizing: border-box;
+        position: absolute;
+        background: black;
+        color: white;
+        bottom: 240px;
+        transition: .5s;
+    }
+    h1{
+        margin: 10px;
+        font-size: 40px;
+    }
+    p{
+        font-size: 20px;
+        margin: 20px;
+        visibility: hidden;
+        opacity: 0;
+    }
+    span{
+        font-weight: bold;
+    }
+    .card:hover{
+cursor: pointer;
+    }
+    .card:hover .intro{
+        height: 220px;
+        bottom: 240px;
+        background: black;
+    }
+    .card:hover p{
+        opacity: 1;
+        visibility: visible;
+    }
+    .card:hover img{
+        transform: scale(1.1) rotate(-3deg);
+    }
+</style>
+<body>
+   <div class="container">
+    <div class="card">
+<img src="https://tse4.mm.bing.net/th?id=OIP.Sc0mkGhWTXUmMRvCEt8viQHaHa&pid=Api&P=0&h=220" alt="Cheetah">
+<div class="intro">
+<h1>CHEETAH</h1>
+<p>The<span>Cheetah</span> a large cat and the fastest land animal. It has a tawny to creamy white or pale buff fur that is marked with evenly spaced.</p>
+
+</div>
+    </div>
+    <div class="card">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.p3V8KV8pxOMHMNGbt77Q9QHaE7&pid=Api&P=0&h=220" alt="monkey">
+        <div class="intro">
+        <h1>MONKEY</h1>
+        <p>The<span>Monkey</span> Monkey is a common name that may refer to most mammals of the infraorder Simiiformes, also known as simians. Traditionally, all.</p>
+        
+        </div>
+            </div>
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.UqJOaKSTOrVaTYYqUP1cpgHaEK&pid=Api&P=0&h=220" alt="White Tiger">
+                <div class="intro">
+                <h1>WHITE TIGER</h1>
+                <p>The<span>White Tiger</span>A captive white tiger at the Singapore Zoo. The white tiger, or bleached tiger, is a leucistic morph of the tiger. It is occasiona.</p>
+                
+                </div>
+                    </div>
+   </div> 
+</body>
+</html>
