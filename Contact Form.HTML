@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px;
+        background-color: #f9f9f9;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+        margin: 20px;
+    }
+
+    .contact-left-title h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .contact-left-title hr {
+        border: none;
+        height: 3px;
+        background-color: #007BFF;
+        width: 50px;
+        margin-bottom: 20px;
+    }
+
+    .contact-input,
+    .contact-inputs {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .contact-inputs {
+        height: 100px;
+        resize: vertical;
+    }
+
+    button[type="submit"] {
+        display: flex;
+        align-items: center;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        gap: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .contact-right img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+
+
+
+<body>
+    <div class="container">
+        <form action="" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+            </div>
+            <input type="text" name="Name" placeholder="your Name" class="contact-input" required>
+            <input type="email" name="Email" placeholder="your Email" class="contact-input" required>
+            <textarea name="message" placeholder="your message" class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img
+                    src="https://up.yimg.com/ib/th?id=OIP.0P28bDqeUr0IfwrcJ6OU1QHaHa&pid=Api&rs=1&c=1&qlt=95&w=115&h=115"
+                    alt=""></button>
+        </form>
+        <div class="contact-right">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.9hiznnDUD4iZCtctD9ef8QHaEK&pid=Api&P=0&h=220" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    const form = document.querySelector('.contact-left');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Form page reload hone se rokta hai
+
+        const name = form.Name.value.trim();
+        const email = form.Email.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        alert(`Thank you, ${name}! Your message has been sent.`);
+
+        // Optionally clear form after submission
+        form.reset();
+    });
+</script>
+
+</html>
